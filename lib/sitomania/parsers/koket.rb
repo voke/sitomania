@@ -4,13 +4,10 @@ module Sitomania
 
       domain /koket\.se/
 
-      def parse
+      class Metadata < Sitomania::Metadata
 
-        Metadata.build do |data|
-          data.canonical_url = hangry.canonical_url
-          data.name = hangry.name
-          data.instructions = hangry.instructions
-          data.ingredients = doc.css('#ingredients li').map do |elm|
+        def ingredients
+          doc.css('#ingredients li').map do |elm|
             value = elm.at_css('.ingredient').text rescue nil
             name = elm.at_css('[itemprop=ingredients]').text
             "#{value} #{name}".strip

@@ -4,14 +4,7 @@ module Sitomania
 
       domain /recept\.se/
 
-      def parse
-
-        Metadata.build do |data|
-          data.canonical_url = hangry.canonical_url
-          data.name = hangry.name
-          data.instructions = hangry.instructions
-          data.ingredients = hangry.ingredients
-        end
+      class Metadata < Sitomania::Metadata
 
       end
 

@@ -24,18 +24,12 @@ module Sitomania
         @hangry ||= Hangry.parse(response_body)
       end
 
-      def sanitize(*strings)
-        Array(strings).flatten.map do |string|
-          string.gsub("\n", ' ').squeeze(' ').strip
-        end
-      end
-
       def response_body
         @response ||= open(url).read
       end
 
       def parse
-        raise(NotImplementedError)
+        self.class::Metadata.new(doc, hangry)
       end
 
       def self.parse(url)

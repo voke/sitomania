@@ -4,19 +4,16 @@ module Sitomania
 
       domain /ica\.se/
 
-      def parse
+      class Metadata < Sitomania::Metadata
 
-        Metadata.build do |data|
-
-          data.canonical_url = hangry.canonical_url
-          data.name = hangry.name
-
+        def instructions
           list = doc.css('[itemprop="recipeInstructions"] ol > li').map(&:text)
-          data.instructions = list.join("\n")
+          list.join("\n")
+        end
 
+        def ingredients
           ingredients = doc.css('.ingredients ul li').map(&:text)
-          data.ingredients = sanitize(ingredients)
-
+          sanitize(ingredients)
         end
 
       end

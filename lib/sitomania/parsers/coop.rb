@@ -4,17 +4,11 @@ module Sitomania
 
       domain /coop\.se/
 
-      def parse
+      class Metadata < Sitomania::Metadata
 
-        Metadata.build do |data|
-
-          data.canonical_url = hangry.canonical_url
-          data.instructions = hangry.instructions
-          data.name = hangry.name
-
+        def ingredients
           ingredients = doc.css('[itemprop=recipeIngredient]').map(&:text)
-          data.ingredients = sanitize(ingredients)
-
+          sanitize(ingredients)
         end
 
       end
