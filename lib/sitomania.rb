@@ -26,7 +26,7 @@ module Sitomania
     if parser
       parser[1]
     else
-      raise(ParserNotFoundError, "No parser found for #{host.inspect}")
+      Sitomania::Parsers::Base
     end
   end
 

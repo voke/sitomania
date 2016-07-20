@@ -5,6 +5,9 @@ module Sitomania
   module Parsers
     class Base
 
+      class Metadata < Sitomania::Metadata
+      end
+
       attr_accessor :url, :doc
 
       def initialize(url)
