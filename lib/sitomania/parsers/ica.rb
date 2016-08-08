@@ -12,8 +12,8 @@ module Sitomania
         end
 
         def ingredients
-          ingredients = doc.css('.ingredients ul li').map(&:text)
-          sanitize(ingredients)
+          list = doc.css('.ingredients ul li').map(&:text)
+          sanitize(list)
         end
 
       end

@@ -7,8 +7,8 @@ module Sitomania
       class Metadata < Sitomania::Metadata
 
         def ingredients
-          ingredients = doc.css('[itemprop=recipeIngredient]').map(&:text)
-          sanitize(ingredients)
+          list = doc.css('[itemprop=recipeIngredient]').map(&:text)
+          sanitize(list)
         end
 
       end
