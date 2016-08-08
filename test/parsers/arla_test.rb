@@ -12,7 +12,7 @@ describe Sitomania::Parsers::Arla do
       parser = Sitomania::Parsers::Arla.new(target_url)
       metadata = parser.parse
 
-      metadata.instructions.must_match /gör så här/i
+      metadata.instructions.must_match(/gör så här/i)
       metadata.ingredients.size.must_equal 11
       metadata.canonical_url.must_equal target_url
       metadata.name.must_equal 'Thailändsk fläskfilé'
