@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Mathem < Base
 
-      domain /mathem\.se/
+      domain(/mathem\.se/)
 
       class Metadata < Sitomania::Metadata
 

@@ -4,7 +4,7 @@ module Sitomania
     ATTRIBUTES = [:instructions, :ingredients,
       :canonical_url, :name, :image_url]
 
-    attr_writer *ATTRIBUTES
+    attr_writer(*ATTRIBUTES)
 
     attr_accessor :doc, :hangry
 

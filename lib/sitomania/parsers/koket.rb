@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Koket < Base
 
-      domain /koket\.se/
+      domain(/koket\.se/)
 
       class Metadata < Sitomania::Metadata
 

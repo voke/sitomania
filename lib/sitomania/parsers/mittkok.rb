@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Mittkok < Base
 
-      domain /mittkok\.expressen\.se/
+      domain(/mittkok\.expressen\.se/)
 
       class Metadata < Sitomania::Metadata
 

@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Ica < Base
 
-      domain /ica\.se/
+      domain(/ica\.se/)
 
       class Metadata < Sitomania::Metadata
 

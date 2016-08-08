@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Arla < Base
 
-      domain /arla\.se/
+      domain(/arla\.se/)
 
       class Metadata < Sitomania::Metadata
 

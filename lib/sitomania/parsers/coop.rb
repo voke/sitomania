@@ -2,7 +2,7 @@ module Sitomania
   module Parsers
     class Coop < Base
 
-      domain /coop\.se/
+      domain(/coop\.se/)
 
       class Metadata < Sitomania::Metadata
 
